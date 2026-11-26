@@ -1,0 +1,13 @@
+schema_version: 1
+services:
+  launch_control:
+    name: /launch_control
+    types:
+      - launch_control_msgs/srv/LaunchNode
+      - data_msgs/srv/LaunchNode
+    request:
+      launch_id: string
+      launch_op: string
+    response:
+      success: boolean
+      message: string

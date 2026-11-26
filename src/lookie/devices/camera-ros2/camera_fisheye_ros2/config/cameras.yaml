@@ -1,0 +1,8 @@
+cameras:
+  fisheye:
+    usb_path: 1-10.1:1.0
+    product: 'DECXIN  CAMERA: DECXIN  CAMERA'
+    vendor: DECXIN_CAMERA
+    vendor_id: 1bcf
+    product_id: 2cd1
+    serial: 01.00.00

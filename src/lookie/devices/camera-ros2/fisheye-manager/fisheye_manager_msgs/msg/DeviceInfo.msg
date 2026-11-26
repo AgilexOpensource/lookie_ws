@@ -1,0 +1,9 @@
+string video_device
+string usb_path
+string product
+string vendor
+string vendor_id
+string product_id
+string serial
+string vid_pid
+bool capture

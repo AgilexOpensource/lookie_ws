@@ -1,0 +1,15 @@
+schema_version: 1
+revision: 2
+cameras:
+  fisheye:
+    enabled: true
+    expected_usb_path: 1-2.1:1.0
+    parameters:
+      camera_name: camera_fisheye
+      camera_namespace: ''
+      camera_width: 640
+      camera_height: 480
+      camera_fps: 30
+      # fisheye_camera_node.cpp 中 use_image_transport 为 true 时，image_transport_plugins 才有效
+      use_image_transport: 'true'
+      image_transport_plugins: 'image_transport/raw,image_transport/camera_compress'

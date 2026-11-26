@@ -1,0 +1,7 @@
+string alias
+string serial_number
+bool require_present
+---
+bool success
+string message
+uint64 config_revision

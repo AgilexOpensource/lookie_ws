@@ -1,0 +1,78 @@
+*.bin
+*.pyc
+*.pyo
+.vs/
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test and tooling cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage
+htmlcov/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# ROS/colcon local build artifacts
+build/
+install/
+log/
+
+# CMake artifacts
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+install_manifest.txt
+
+# Packaging artifacts
+*.egg-info/
+dist/
+*.egg
+
+# Local editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.bak
+*~
+
+# Local ROS runtime data
+.ros/
+rosbag2_*/
+*.db3
+*.mcap
+
+# Runtime logs
+*.log
+__pycache__
+.vscode
+
+src/rosboard/bin/startup
+
+src/lookie/devices/lookie_description/*
+!src/lookie/devices/lookie_description/.gitkeep
+src/lookie/devices/agx_arm_ros/*
+!src/lookie/devices/agx_arm_ros/.gitkeep
+src/lookie/devices/ugv_sdk/*
+!src/lookie/devices/ugv_sdk/.gitkeep
+src/lookie/devices/realsense-ros/*
+!src/lookie/devices/realsense-ros/.gitkeep

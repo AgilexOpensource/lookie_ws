@@ -1,0 +1,20 @@
+/**:
+  ros__parameters:
+    # Legacy alias. When this is not empty, it overrides channel in the node.
+    port_name: ""
+    channel: "can0"
+    can_interface: "socketcan"
+    node_id: 8
+    frame_id: "hi04_link"
+    quaternion_order: "wxyz"
+    normalize_quaternion: true
+    publish_imu: true
+    publish_tf: false
+    tf_parent_frame: "world"
+    acceleration_topic: "/acceleration_msg"
+    angular_velocity_topic: "/angular_velocity_dps"
+    euler_topic: "/euler_deg"
+    quaternion_topic: "/quaternion"
+    pressure_topic: "/pressure"
+    inclinometer_topic: "/inclinometer_deg"
+    imu_topic: "/imu"

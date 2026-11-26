@@ -1,0 +1,10 @@
+string alias
+string parameter_name
+uint32 width
+uint32 height
+uint32 fps
+---
+bool success
+string message
+uint64 config_revision
+bool restart_required

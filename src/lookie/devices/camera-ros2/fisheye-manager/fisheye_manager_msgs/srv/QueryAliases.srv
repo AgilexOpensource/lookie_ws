@@ -1,0 +1,8 @@
+string alias
+string request_id
+---
+bool success
+string message
+string request_id
+uint32 alias_count
+uint64 config_revision

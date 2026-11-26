@@ -1,0 +1,94 @@
+# ~/.rosboard.yaml 用 deviceType 选定机型，用 deviceProfilesFile 指向本文件。
+# 启动时四台都会校验，只有被选中的那一台传给前端。
+# models 是列表，一台设备可以有多条。id 只在该列表内不能重复，会随配置传到浏览器，页面不显示。
+# 左侧标题用 label；订阅和查看器按 topic 查找，不按 id。
+schema_version: 1
+devices:
+  # 升降柱低配
+  lookie__pf-lookie_neo_r01__ee-agx_gripper_r01:
+    actions:
+      # 同一台设备的 actions 内不能重复。点击后用它向后端标识按钮，菜单上不显示。
+      - id: demo_talker1
+        label:
+          # 中文界面的菜单文字。
+          zh-CN: 启动talker
+          # 英文界面的菜单文字。
+          en: Start talker
+        # ros_launch：调用已有 launch。还可为 system_service、binding_panel、calibration_panel。
+        handler: ros_launch
+        # false：点击后直接执行。true：先弹出确认框。
+        confirm: false
+        # 交给采集程序的 launch 配置名，只能含字母、数字、下划线和连字符。
+        launch_id: demo_talker
+        # start、stop 或 restart。省略时按 restart。
+        operation: start
+        # 仅 ros_launch 可写。true：这个按钮不参与该 launch 的运行状态指示。
+        ignore_launch_status: true
+      # 与上一条的 id 不能相同。菜单文字仍由 label 决定。
+      - id: demo_talker2
+        label:
+          zh-CN: 关闭talker
+          en: Stop talker
+        handler: ros_launch
+        confirm: false
+        # 与启动按钮指向同一个 launch，用 operation 区分关闭。
+        launch_id: demo_talker
+        # start、stop 或 restart。这里为 stop。
+        operation: stop
+        # 启动和关闭共用一个 launch_id，两边都跳过状态指示，避免两个按钮抢同一状态。
+        ignore_launch_status: true
+    models:
+      - id: lookie_neo
+        viewer: joint-state
+        # TODO 需要灵活加前缀
+        topic: /neo/driver/feedback/joint_states
+        msg_type: sensor_msgs/msg/JointState
+        label: {zh-CN: lookie_neo, en: lookie_neo}
+        # 消息关节名 → URDF 关节名。未列出的关节按消息原名使用，数值沿用消息弧度。
+        # &torso_joints 是 YAML 锚点，只供下方 *torso_joints 复用；解析后锚点名丢弃，不会进入代码。
+        joint_map: &torso_joints
+          # 左边是 JointState.name，右边是 URDF 关节名。
+          l_arm_joint1: l_arm_joint1
+          l_arm_joint2: l_arm_joint2
+          l_arm_joint3: l_arm_joint3
+          l_arm_joint4: l_arm_joint4
+          l_arm_joint5: l_arm_joint5
+          l_arm_joint6: l_arm_joint6
+          l_arm_joint7: l_arm_joint7
+          r_arm_joint1: r_arm_joint1
+          r_arm_joint2: r_arm_joint2
+          r_arm_joint3: r_arm_joint3
+          r_arm_joint4: r_arm_joint4
+          r_arm_joint5: r_arm_joint5
+          r_arm_joint6: r_arm_joint6
+          r_arm_joint7: r_arm_joint7
+          # A/B：消息里的 fold_joint 对应模型中的旋转躯干 torso_joint。
+          torso_joint1: torso_joint1
+          torso_joint2: torso_joint2
+        # 这台模型要加载的资源表。键是角色名，值是该角色的 URDF 和包目录。
+        # joint-state 要求键正好是 robot。整份配置经 /collect/config 传到浏览器。
+        resources:
+          # 角色名，表示整机模型。查看器按 resources.robot 取出下面的 urdf 和 packages。
+          robot:
+            # 相对 .rosboard.yaml 的 modelRoot。本行假定 modelRoot 是 robo_description 的上一级。
+            # 拼成 /models/robo_description/urdf/A.urdf 后加载 URDF 文本。这一步不查 packages。
+            urdf: urdf/lookie__pf-lookie_neo_r01__ee-agx_gripper_r01_glb.urdf
+            # 只翻译 URDF 里的 package://包名/...。左边是包名，右边是该包相对 modelRoot 的目录。
+            # 左边与 package://robo_description 比较；右边接到 modelRoot 后面。
+            # package://robo_description/meshes/xx 落到 modelRoot/robo_description/meshes/xx。
+            # modelRoot 已是该包所在目录时，右边写 .，urdf 写 urdf/文件名.urdf。
+            packages: {lookie_description: .}
+  # 三折叠高配
+  lookie__pf-lookie_trio_r01__ee-revo2std_r01:
+    actions: []
+    models:
+      - id: lookie_trio
+        viewer: joint-state
+        topic: /trio/driver/feedback/joint_states
+        msg_type: sensor_msgs/msg/JointState
+        label: {zh-CN: lookie_trio, en: lookie_trio}
+        joint_map: *torso_joints
+        resources:
+          robot: 
+            urdf: urdf/lookie__pf-lookie_trio_r01__ee-revo2std_r01_glb.urdf
+            packages: {lookie_description: lookie_description}

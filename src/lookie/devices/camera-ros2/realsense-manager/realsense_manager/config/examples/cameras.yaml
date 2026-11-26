@@ -1,0 +1,59 @@
+schema_version: 1
+revision: 12
+cameras:
+  left:
+    enabled: true
+    expected_usb_path: 4-1
+    parameters:
+      serial_no: ''
+      camera_name: camera_left
+      camera_namespace: ''
+      enable_color: true
+      enable_depth: true
+      pointcloud.enable: false
+      rgb_camera.color_profile: 848x480x30
+      depth_module.color_profile: 848x480x30
+      depth_module.depth_profile: 848x480x30
+      align_depth.enable: true
+  head:
+    enabled: true
+    expected_usb_path: 2-1.2
+    parameters:
+      serial_no: ''
+      camera_name: camera_head
+      camera_namespace: ''
+      enable_color: true
+      enable_depth: true
+      pointcloud.enable: false
+      rgb_camera.color_profile: 848x480x30
+      depth_module.color_profile: 848x480x30
+      depth_module.depth_profile: 848x480x30
+      align_depth.enable: true
+  torso:
+    enabled: true
+    expected_usb_path: 4-3
+    parameters:
+      serial_no: ''
+      camera_name: camera_torso
+      camera_namespace: ''
+      enable_color: true
+      enable_depth: true
+      pointcloud.enable: false
+      rgb_camera.color_profile: 848x480x30
+      depth_module.color_profile: 848x480x30
+      depth_module.depth_profile: 848x480x30
+      align_depth.enable: true
+  right:
+    enabled: true
+    expected_usb_path: 2-2
+    parameters:
+      serial_no: ''
+      camera_name: camera_right
+      camera_namespace: ''
+      enable_color: true
+      enable_depth: true
+      pointcloud.enable: false
+      rgb_camera.color_profile: 848x480x30
+      depth_module.color_profile: 848x480x30
+      depth_module.depth_profile: 848x480x30
+      align_depth.enable: true

@@ -1,0 +1,14 @@
+deviceId: '625'
+# AGX_ROSBOARD_PREFIX: ros2 pkg prefix --share rosboard
+deviceProfilesFile: $(env AGX_ROSBOARD_PREFIX)/config/robo_profiles.yaml
+serviceContractsFile: $(env AGX_ROSBOARD_PREFIX)/config/ros_services.yaml
+deviceType: $(env LOOKIE_MODEL)
+mode: local
+# LOOKIE_DESCRIPTION_PREFIX: ros2 pkg prefix --share lookie_description
+modelRoot: $(env LOOKIE_DESCRIPTION_PREFIX)
+server:
+  clientid: e5cd7e4891bf95d1d19206ce24a7b32e
+  port: 8080
+  server_port: 8008
+  server_user: rsync_user
+  url: 127.0.0.1

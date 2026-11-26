@@ -1,0 +1,18 @@
+# Host tools. Not a colcon workspace. Import from architecture_skeleton_a2/: vcs import . < repos/tools.repos
+repositories:
+  src/lookie/lookie_description:
+    type: git
+    url: https://github.com/AgilexOpensource/lookie_description.git
+    version: dev/alpha3/glb
+  src/lookie/devices/agx_arm_ros:
+    type: git
+    url: https://github.com/agilexrobotics/agx_arm_ros.git
+    version: ros2
+  src/lookie/devices/mobile_base/ugv_sdk:
+    type: git
+    url: https://github.com/westonrobot/ugv_sdk.git
+    version: main
+  src/lookie/devices/camera-ros2/realsense-ros:
+    type: git
+    url: https://github.com/realsenseai/realsense-ros.git
+    version: 4.56.4

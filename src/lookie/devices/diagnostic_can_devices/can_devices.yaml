@@ -1,0 +1,22 @@
+topic: /agx_wheelarm_can_devices_diagnostics
+
+# Example lower bounds; tune these against your normal operating modes.
+devices:
+  - name: can_chassis_imu
+    bitrate: 500000
+    min_fps: 700
+  - name: can_chassis
+    bitrate: 500000
+    min_fps: 200
+  - name: can_right_arm
+    bitrate: 1000000
+    min_fps: 2800
+  - name: can_torso
+    bitrate: 1000000
+    min_fps: 400
+  - name: can_left_arm
+    bitrate: 1000000
+    min_fps: 2700
+  - name: can_head
+    bitrate: 1000000
+    min_fps: 350

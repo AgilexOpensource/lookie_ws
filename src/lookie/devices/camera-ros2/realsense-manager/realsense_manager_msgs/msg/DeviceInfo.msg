@@ -1,0 +1,16 @@
+string name
+string serial_number
+string firmware_version
+string recommended_firmware_version
+string physical_port
+string usb_path
+string debug_op_code
+bool advanced_mode
+string product_id
+bool camera_locked
+string usb_type_descriptor
+string product_line
+string asic_serial_number
+string firmware_update_id
+string dfu_device_path
+string connection_type

@@ -1,0 +1,5 @@
+string alias
+---
+bool success
+string message
+uint64 config_revision

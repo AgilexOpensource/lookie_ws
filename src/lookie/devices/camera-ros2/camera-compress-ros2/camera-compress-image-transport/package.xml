@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>camera_compress_transport</name>
+  <version>0.1.0</version>
+  <description>image_transport plugins that publish camera_compress, vaapi_compress, depth_rvl_compress, and depth_png_compress topics. Color is JPEG. 16-bit depth is lossless RVL on depth_rvl_compress, or PNG level 1 with RLE on depth_png_compress. vaapi_compress uses VA-API for color JPEG.</description>
+  <maintainer email="support@agilex.ai">AgileX</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+  <depend>libgstreamer-plugins-base1.0-dev</depend>
+  <depend>libgstreamer1.0-dev</depend>
+  <depend>pluginlib</depend>
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+
+  <exec_depend>gstreamer1.0-plugins-base</exec_depend>
+  <exec_depend>gstreamer1.0-vaapi</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <image_transport plugin="${prefix}/camera_compress_plugins.xml"/>
+  </export>
+</package>

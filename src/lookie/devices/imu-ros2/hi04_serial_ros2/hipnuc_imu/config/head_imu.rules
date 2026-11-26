@@ -1,0 +1,1 @@
+KERNEL=="ttyUSB*",KERNELS=="3-1.4",ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7522", MODE:="0777",SYMLINK+="head_imu"

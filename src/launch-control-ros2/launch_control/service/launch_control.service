@@ -1,0 +1,12 @@
+[Unit]
+Description=ROS 2 Launch Control
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/agilex/develop/launch_control/launch_control_ws/install/launch_control/lib/launch_control/run.sh
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,22 @@
+[Unit]
+Description=ROS 2 SocketCAN device diagnostics
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=agilex
+WorkingDirectory=/home/agilex/diagnostic_can_devices
+Environment=ROS_DOMAIN_ID=0
+Environment=ROS_LOCALHOST_ONLY=0
+ExecStart=/bin/bash /home/agilex/diagnostic_can_devices/start_diagnostic_can_devices.sh
+Restart=always
+RestartSec=3
+KillSignal=SIGINT
+KillMode=control-group
+TimeoutStopSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

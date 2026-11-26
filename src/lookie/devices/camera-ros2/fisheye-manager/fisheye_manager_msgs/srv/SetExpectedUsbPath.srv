@@ -1,0 +1,6 @@
+string alias
+string usb_path
+---
+bool success
+string message
+uint64 config_revision

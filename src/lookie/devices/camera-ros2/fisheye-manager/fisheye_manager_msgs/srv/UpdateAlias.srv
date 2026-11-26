@@ -1,0 +1,8 @@
+string alias
+string camera_name
+string camera_namespace
+bool enabled
+---
+bool success
+string message
+uint64 config_revision

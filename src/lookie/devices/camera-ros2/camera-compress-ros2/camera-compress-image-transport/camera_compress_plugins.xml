@@ -1,0 +1,77 @@
+<library path="camera_compress_transport">
+  <class
+    name="image_transport/camera_compress_pub"
+    type="camera_compress_transport::CameraCompressPublisher"
+    base_class_type="image_transport::PublisherPlugin">
+    <description>
+      Publishes sensor_msgs/CompressedImage on &lt;base&gt;/camera_compress.
+      8-bit color and mono8 are JPEG. 16UC1 and mono16 are PNG.
+    </description>
+  </class>
+
+  <class
+    name="image_transport/camera_compress_sub"
+    type="camera_compress_transport::CameraCompressSubscriber"
+    base_class_type="image_transport::SubscriberPlugin">
+    <description>
+      Decodes a camera_compress topic back into sensor_msgs/Image.
+    </description>
+  </class>
+
+  <class
+    name="image_transport/vaapi_compress_pub"
+    type="camera_compress_transport::VaapiPublisher"
+    base_class_type="image_transport::PublisherPlugin">
+    <description>
+      Publishes sensor_msgs/CompressedImage on &lt;base&gt;/vaapi_compress.
+      Color is VA-API JPEG, with libjpeg-turbo fallback. 16UC1 and mono16 are PNG.
+    </description>
+  </class>
+
+  <class
+    name="image_transport/depth_rvl_compress_pub"
+    type="camera_compress_transport::DepthRvlCompressPublisher"
+    base_class_type="image_transport::PublisherPlugin">
+    <description>
+      Publishes sensor_msgs/CompressedImage on &lt;base&gt;/depth_rvl_compress.
+      16UC1 and mono16 are lossless RVL. Other encodings are skipped.
+    </description>
+  </class>
+
+  <class
+    name="image_transport/depth_rvl_compress_sub"
+    type="camera_compress_transport::DepthRvlCompressSubscriber"
+    base_class_type="image_transport::SubscriberPlugin">
+    <description>
+      Decodes a depth_rvl_compress topic back into sensor_msgs/Image.
+    </description>
+  </class>
+
+  <class
+    name="image_transport/depth_png_compress_pub"
+    type="camera_compress_transport::DepthPngCompressPublisher"
+    base_class_type="image_transport::PublisherPlugin">
+    <description>
+      Publishes sensor_msgs/CompressedImage on &lt;base&gt;/depth_png_compress.
+      16UC1 and mono16 are lossless PNG at level 1 with RLE. Other encodings are skipped.
+    </description>
+  </class>
+
+  <class
+    name="image_transport/depth_png_compress_sub"
+    type="camera_compress_transport::DepthPngCompressSubscriber"
+    base_class_type="image_transport::SubscriberPlugin">
+    <description>
+      Decodes a depth_png_compress topic back into sensor_msgs/Image.
+    </description>
+  </class>
+
+  <class
+    name="image_transport/vaapi_compress_sub"
+    type="camera_compress_transport::VaapiSubscriber"
+    base_class_type="image_transport::SubscriberPlugin">
+    <description>
+      Decodes a vaapi_compress topic back into sensor_msgs/Image.
+    </description>
+  </class>
+</library>

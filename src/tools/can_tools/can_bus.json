@@ -1,0 +1,12 @@
+{
+  "poll_interval": 1.0,
+  "command_timeout": 3.0,
+  "devices": [
+    {"bus_addr": "0000:03:00.0", "dev_id": "0x0", "name": "can_chassis_imu", "bitrate": 500000},
+    {"bus_addr": "0000:03:00.0", "dev_id": "0x1", "name": "can_chassis", "bitrate": 500000},
+    {"bus_addr": "0000:30:00.0", "dev_id": "0x0", "name": "can_right_arm", "bitrate": 1000000},
+    {"bus_addr": "0000:30:00.0", "dev_id": "0x1", "name": "can_torso", "bitrate": 1000000},
+    {"bus_addr": "0000:31:00.0", "dev_id": "0x0", "name": "can_left_arm", "bitrate": 1000000},
+    {"bus_addr": "0000:31:00.0", "dev_id": "0x1", "name": "can_head", "bitrate": 1000000}
+  ]
+}
